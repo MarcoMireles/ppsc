@@ -10,3 +10,5 @@ echo 'Éxito... ' . mysqli_get_host_info($enlace) . "\n";
 
 mysqli_close($enlace);
 
+//Esto es base de datos para los de PHP
+//Esto es un ejemplo para GIT
