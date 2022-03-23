@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ciclo Do While - Contador</title>
+</head>
+<body>
+
+
+  <script>
+
+    // Declaramos una variable para contar las iteraciones
+    var i=0;
+
+    // Declaramos una variable vacia para crear el string que imprimiremos
+    var cantidad ='';
+
+    // Hacemos el do y ejecutamos la primera vuelta
+    do {
+
+        // Validamos si nuestro iterador/contador es igual a 0
+        if(i == 0){
+
+            // Si es 0 lanzamos el string de Comienzo del programa
+            console.log('Comienzo del programa');
+
+        }else if(i >10){ // Validamos si la variable i es mayor a 10
+
+            //Si no es igual a 0 pero es mayor a 10 lanzamos el Fin del Programa
+            console.log('Fin del programa');
+
+        }else{
+
+            // Si ninguna de las opciones anteriores se cumple lanzamos el siguiente string en consola
+            console.log('La variable contador/iterador es '+ i);
+        }
+
+        // Le agregamos 1 a nuestro iterador
+        i++; //2
+
+        // Hacemos nuestra validacion de iterador para saber si continuamos con el ciclo
+    } while (i <= 11);
+
+  </script>
+</body>
+</html>

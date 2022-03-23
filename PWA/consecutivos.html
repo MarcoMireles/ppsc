@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ciclo Do While - Numeros Consecutivos</title>
+</head>
+<body>
+
+
+  <script>
+
+    // Declaramos una variable para contar las iteraciones
+    var i=1;
+
+    // Declaramos una variable vacia para crear el string que imprimiremos
+    var cantidad ='';
+
+    // Hacemos el do y ejecutamos la primera vuelta
+    do {
+
+        // Le asignamos cantidad mas el iterador a nuestra variable cantidad
+        cantidad = cantidad + '' +i; //1
+
+        // Imprimimos en consola la variable cantidad
+        console.log( cantidad );
+
+        // Le agregamos 1 a nuestro iterador
+        i++; //2
+
+        // Hacemos nuestra validacion de iterador para saber si continuamos con el ciclo
+    } while (i <= 5);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body{
+    background-color: #fafafa;
+}
+
+
+div{
+    width: 600px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+
+
+table{
+    border: 2px solid crimson;
+}
+table table{
+    border: 2px solid green;
+}
+
+
+table tr th{
+    border: 1px solid darkblue;
+    background-color: darkblue;
+    color: white;
+}
+table tr td{
+    border: 1px solid rebeccapurple;
+}

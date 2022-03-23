@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Condicionales</title>
+</head>
+<body>
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  var x = 5;
+  var y = 10;
+
+  if (x > y){
+      Swal.fire(
+          'X es mayor',
+          'ALV PRRO',
+          'success'
+      )
+  }else{
+      Swal.fire(
+          'X es menor',
+          'ALV GATO',
+          'error'
+      )
+  }
+</script>
+<script>
+
+    /*
+     ***********************
+     **** IF Estructura ****
+     ***********************
+     */
+    // if(condicion){
+    //     // Sentencias que se ejecutaran si la condicion se cumple
+    // }else{
+    //     // Sentencias que se ejecutan si la condicion no se cumple
+    // }
+
+    // = -> Asignar un valor
+    // == -> Comparar valores no importa el tipo
+    // === -> Comparar valores y el tipo
+
+    // Ejemplo IF
+
+    // var num1 = 3;
+    // var num2 = '5';
+    // var texto = 'Perritos';
+    //
+    // if (num1 == num2){
+    //     console.log('La condicion si se cumple');
+    // }else {
+    //     console.log('La condicion no se cumple');
+    // }
+
+    /*
+     ***************************
+     **** Switch Estructura ****
+     ***************************
+     */
+
+    // switch (variable){
+    //     case (valor1):
+    //         // Sentencias que se ejecutaran si la condicion se cumple
+    //         break;
+    //     case (valor2):
+    //         // Sentencias que se ejecutaran si la condicion se cumple
+    //         break;
+    //     case (valor3):
+    //         // Sentencias que se ejecutaran si la condicion se cumple
+    //         break;
+    //     default:
+    //         // Sentencias que se ejecutaran si la condicion se cumple
+    //         break;
+    // }
+
+    // Ejemplo Switch
+    // switch (texto){
+    //     case ('Hola'):
+    //         console.log('El valor es Hola');
+    //         break;
+    //     case ('Saludos'):
+    //         console.log('El valor es Saludos');
+    //         break;
+    //     case ('Perritos'):
+    //         console.log('El valor es Perritos');
+    //         break;
+    //     case ('Gatitos'):
+    //         console.log('El valor es Gatitos');
+    //         break;
+    //     case ('Rojo'):
+    //         console.log('El valor es Rojo');
+    //         break;
+    //     default:
+    //         console.log('La variable no se encontro');
+    //         break;
+    // }
+
+</script>
+</body>
+</html>

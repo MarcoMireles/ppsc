@@ -1,0 +1,26 @@
+body{
+    border: 2px solid red;
+}
+h1{
+    text-decoration: underline;
+    color: red;
+}
+p{
+    color: blue;
+    font-size: 16px;
+}
+span.rojo{
+    color: red;
+}
+span.amarillo-azul{
+    background-color: yellow;
+    color: darkblue;
+}
+p a{
+    color: crimson;
+    font-size: 20px;
+}
+span.amarillo-negro{
+    background-color: black;
+    color: yellow;
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Estructura básica</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+  <div class="flex flex-col mb-4"></h3> Este es un formulario chido</h3>
+  </div>
+  <form>
+
+    <div class="flex flex-col mb-4">
+      <label for="temperatura" class="font-semibold">Ingresa tu nombre</label>
+      <input type="TEXT" id="nom" class="border border-gray-300 px-4 py-2">
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <label for="humedad-relativa" class="font-semibold">Ingresa tu apellido</label>
+      <input type="text" id="ape" class="border border-gray-300 px-4 py-2">
+    </div>
+    <div class="flex flex-col mb-4">
+      <button class="bg-green-500 text-white font-bold px-8 py-4" type="button" id="puto">Validar</button>
+    </div>
+
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+      var puto=document.getElementById("puto");
+      puto.onclick=function(){validar()};
+      function validar(){
+          var N =document.getElementById("nom").value;
+          var A =document.getElementById('ape').value;
+          Swal.fire('Any fool can use a computer');
+
+
+      }
+  </script>
+</body>
+</html>

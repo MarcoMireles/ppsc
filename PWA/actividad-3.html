@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 1 - SweetAlert2</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+  <div class="flex flex-col mb-4">
+    <h3 class="font-bold text-xl">Formulario 1 </h3>
+    <p>Se requiere fumigar con pesticidas desde un avión bajo condiciones específicas.
+      Será posible fumigar sólo si la temperatura es de al menos 21 grados, la humedad relativa está
+      entre 15 y 35 por ciento y la velocidad del aire es a lo sumo de 16 km/h. Desarrolla un
+      formulario que te permita solicitar estos datos al usuario y utiliza estructuras condicionales para
+      decidir si es posible fumigar o no. Identifica los tipos de entrada requeridos, la estructura
+      condicional más adecuada e imprime el resultado en una ventanilla de alerta.</p>
+  </div>
+
+  <form>
+
+    <div class="flex flex-col mb-4">
+      <label for="temperatura" class="font-semibold">Temperatura</label>
+      <input type="number" id="temperatura" class="border border-gray-300 px-4 py-2">
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <label for="humedad-relativa" class="font-semibold">Humedad relativa</label>
+      <input type="number" id="humedad-relativa" class="border border-gray-300 px-4 py-2">
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <label for="velocidad-del-aire" class="font-semibold">Velocidad del aire</label>
+      <input type="number" id="velocidad-del-aire" class="border border-gray-300 px-4 py-2">
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <button class="bg-green-500 text-white font-bold px-8 py-4" type="button" id="validar">Validar</button>
+    </div>
+
+  </form>
+
+  <!--  Libreria SweetAlert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+
+      var btnValidar = document.getElementById('validar');
+      btnValidar.onclick = function (){validar()};
+
+
+      function validar(){
+          var temperatura = parseInt(document.getElementById('temperatura').value);
+          var humedadRelativa = parseInt(document.getElementById('humedad-relativa').value);
+          var velocidadDelAire = parseInt(document.getElementById('velocidad-del-aire').value);
+
+          var respuestaTemperatura = null;
+          var respuestaHumedadRelativa = null;
+          var respuestaVelocidadDelAire = null;
+
+          if(temperatura >= 21){
+              respuestaTemperatura = true;
+          }else{
+              respuestaTemperatura = false;
+          }
+
+          if(humedadRelativa >= 15 && humedadRelativa <= 35 ){
+              respuestaHumedadRelativa = true;
+          }else{
+              respuestaHumedadRelativa = false;
+          }
+
+          if(velocidadDelAire <= 16 ){
+              respuestaVelocidadDelAire = true;
+          }else{
+              respuestaVelocidadDelAire = false;
+          }
+
+          if (respuestaTemperatura == true && respuestaHumedadRelativa == true && respuestaVelocidadDelAire == true){
+              Swal.fire(
+                  'Oh Yeah!!',
+                  'Si se puede fumigar',
+                  'success'
+              );
+          }else {
+              Swal.fire(
+                  'Oops!!',
+                  'No se puede fumigar',
+                  'error'
+              );
+          }
+
+      }
+  </script>
+
+</section>
+
+</body>
+</html>

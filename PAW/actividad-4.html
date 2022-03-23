@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Estructura básica</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-3xl">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+
+  <h1 class="font-bold text-4xl text-center">Actividad 4 😎</h1>
+
+  <form action="">
+
+    <div class="flex flex-col mb-3" id="caja-nombre">
+      <input type="text" class="border my-4" name="nombre" id="nombre" placeholder="Nombre del morrito">
+    </div>
+
+    <div class="flex flex-col mb-3">
+      <button type="button" id="enviar-nombre" class="bg-green-300 py-2 px-8">Enviar Nombre del morrito</button>
+    </div>
+  </form>
+
+  <div class="res"></div>
+
+
+
+</section>
+
+
+<!--  Libreria SweetAlert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    // Ejemplo JQuery
+    // var btnJquery = $('#enviar-nombre input');
+
+    var btnEnviarNombre = document.getElementById('enviar-nombre');
+
+    // var btnEnviarNombreQuery = document.querySelector('#enviar-nombre');
+
+    // console.log('SEPARADOR')
+    // console.log(btnEnviarNombreQuery)
+
+    btnEnviarNombre.onclick = function (){
+        var nombreForm = document.getElementById('nombre').value;
+        // document.write(nombreForm);
+        // document.write(nombreForm.length);
+        // console.log('Hola morritos Nombre');
+        document.querySelector('.res').textContent = nombreForm + ' y tiene '+ nombreForm.length +' caracteres';
+    }
+
+    var nombre = "Marco"; // 5
+    var apellido = "Mireles"; // 7
+    var nombreCompleto = nombre + ' ' + apellido; // 12 + el espacio
+
+    console.log(nombre.length)
+    console.log(apellido.length)
+    console.log(nombreCompleto.length)
+
+
+</script>
+
+</body>
+</html>

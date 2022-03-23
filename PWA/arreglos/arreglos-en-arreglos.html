@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arreglos dentro de Arreglos</title>
+</head>
+<body>
+
+<input type="text" id="texto" placeholder="Captura el dato">
+<button type="button" id="boton" >Agregar</button>
+
+  <script>
+
+      var dato = [];
+      var boton = document.getElementById('boton');
+      boton.onclick = function (){
+          var info = document.getElementById('texto').value;
+          dato.push(info);
+          console.log(dato)
+      }
+
+
+
+
+
+
+
+    var terror = ['Terror 1','Terror 2','Terror 3'];
+    var comedia = ['Comedia 1','Comedia 2','Comedia 3'];
+    var generos = [terror, comedia];
+
+
+    console.log('Arreglo terror')
+    console.log(terror)
+    console.log('Arreglo comedia')
+    console.log(comedia)
+    console.log('Arreglo generos')
+    console.log(generos)
+
+
+    for (i=0; i < generos.length; i++){
+        console.log('Arreglo -> ' + i);
+        for (j=0; j<generos[i].length; j++){
+            console.log(generos[i][j]);
+        }
+        console.error('Aqui termina la vuelta ->'+i);
+    }
+
+
+    var ciudad1 = ['Ciudad 1', 12,10,11];
+    var ciudad2 = ['Ciudad 2', 12,10,11];
+    var ciudad3 = ['Ciudad 3', 12,10,11];
+    var ciudades = [ciudad1,ciudad2,ciudad3];
+    document.write('<table>');
+    for (i=0; i < ciudades.length; i++){
+
+
+        console.log('Arreglo -> ' + i);
+        for (j=0; j < ciudades[i].length; j++){
+            console.log(ciudades[i][j]);
+        }
+        console.error('Aqui termina la vuelta ->'+i);
+    }
+    document.write('</table>');
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DASHBOARD</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+
+<section class="w-full flex">
+  <div class="container mx-auto bg-white">
+
+    <div class="flex bg-gray-800 justify-center py-4">
+      <h1 class=" text-white text-4xl">BIENVENIDO</h1>
+    </div>
+
+    <div class="flex">
+      <form class="p-16">
+        <div class="flex items-center justify-between mt-4 py-4">
+          <label for="alumno" class="mr-4">Alumno</label>
+          <input type="text" id="alumno" class="border border-gray-200 rounded py-2 px-4" required>
+        </div>
+        <hr>
+        <div class="flex justify-between mt-4">
+          <div class="flex flex-col mx-4">
+            <label for="materia" class="mr-4">Materia</label>
+            <input type="text" id="materia" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+          <div class="flex flex-col mx-4">
+            <label for="calificacion" class="mr-4">Calificacion</label>
+            <input type="number" id="calificacion" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+        </div>
+        <div class="flex justify-between mt-4">
+          <div class="flex flex-col mx-4">
+            <label for="materia1" class="mr-4">Materia</label>
+            <input type="text" id="materia1" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+          <div class="flex flex-col mx-4">
+            <label for="calificacion1" class="mr-4">Calificacion</label>
+            <input type="number" id="calificacion1" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+        </div>
+        <div class="flex justify-between mt-4">
+          <div class="flex flex-col mx-4">
+            <label for="materia2" class="mr-4">Materia</label>
+            <input type="text" id="materia2" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+          <div class="flex flex-col mx-4">
+            <label for="calificacion2" class="mr-4">Calificacion</label>
+            <input type="number" id="calificacion2" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+        </div>
+        <div class="flex justify-between mt-4">
+          <div class="flex flex-col mx-4">
+            <label for="materia3" class="mr-4">Materia</label>
+            <input type="text" id="materia3" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+          <div class="flex flex-col mx-4">
+            <label for="calificacion3" class="mr-4">Calificacion</label>
+            <input type="number" id="calificacion3" class="border border-gray-200 rounded py-2 px-4" required>
+          </div>
+        </div>
+        <div class="flex mt-10">
+          <button class="bg-blue-500 text-white py-2 px-8" type="button" id="calcular">Calcular promedio</button>
+        </div>
+      </form>
+      <div class="flex p-16">
+        <h2 class="text-3xl font-bold">Resultados</h2>
+        <div id="resultados" class="flex flex-col">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    var calcular = document.getElementById('calcular');
+
+    calcular.onclick = function (){
+        var alumno = document.getElementById('alumno').value;
+        var materia = document.getElementById('materia').value;
+        var calificacion = document.getElementById('calificacion').value;
+        var materia1 = document.getElementById('materia1').value;
+        var calificacion1 = document.getElementById('calificacion1').value;
+        var materia2 = document.getElementById('materia2').value;
+        var calificacion2 = document.getElementById('calificacion2').value;
+        var materia3 = document.getElementById('materia3').value;
+        var calificacion3 = document.getElementById('calificacion3').value;
+
+        if(alumno != '' && materia != '' && calificacion != '' && materia1 != '' && calificacion1 != '' && materia2 != '' && calificacion2 != '' && materia3 != '' && calificacion3 != ''){
+
+            var suma = parseInt(calificacion) + parseInt(calificacion1) + parseInt(calificacion2) + parseInt(calificacion3);
+            var promedio = suma/4;
+            console.log('suma:' + suma);
+            console.log('promedio:' + promedio);
+
+        }else {
+            Swal.fire(
+                'Opss!',
+                'Debes llenar todos los campos.',
+                'error'
+            )
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

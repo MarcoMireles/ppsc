@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Estructura básica</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+
+
+
+
+</section>
+
+
+<!--  Libreria SweetAlert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    // ENTEROS
+    var precio1 = 50;
+    var precio2 = "50";
+    var total = precio1 + parseInt(precio2);
+    console.log(total);
+
+    // DECIMALES
+    var decimal1 = 5.689655247;
+    var decimal2 = 3.998554573;
+    var total2 = decimal1 + decimal2;
+    console.log(total2.toFixed(3));
+
+    // LONGITUD DE STRING
+    var nombre = "PEDRO MARTINEZ GARCIA";
+    console.log(nombre.length);
+
+    // REGRESA LA POSICION DE UN CARACTER ESPECIFICO
+    console.log(nombre.indexOf("PEDROM"));
+
+    // EXTRAE UNA PARTE DEL STRING Y FORMA UNO NUEVO
+    var frutas = "manzana,mangos,fresas,sandia";
+    var resultado = frutas.slice(5,9);
+    console.log(resultado);
+
+    // REMPLAZA UN VALOR ESPECIFICO POR OTRO DENTRO DEL STRING
+    var nombre2 = "PEDRO MARTINEZ GARCIA";
+    var resultado2 = nombre2.replace('MARTINEZ','PEREZ');
+    console.log(resultado2);
+
+    // CONVIETE TEXTO COMPLETO A MAYUSCULAS O MINUSCULAS
+    var nombre3 = "pEdrO MarTinez GArcIA";
+
+    // PASAMOS A MINUSCULAS
+    var nomMin = nombre3.toLowerCase();
+
+    // PASAMOS A MAYUSCULAS
+    var nomMay = nombre3.toUpperCase();
+
+    console.log(nombre3);
+    console.log(nomMin);
+    console.log(nomMay);
+
+    // ASI PONEMOS PI
+    var pi = Math.PI;
+    console.log(pi.toFixed(4));
+
+</script>
+
+</body>
+</html>

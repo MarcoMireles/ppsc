@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+    console.warn('%cAlgoritmo 1. Define dos arreglos. Uno con nombres de 5 alumnos hombres y otro con 5 nombre de alumnas mujeres.\nPosteriormente utiliza la ventanilla de alerta para imprimir ambos arreglos de la siguiente manera.\nLos objetos del arreglo deben estar separados por un “ – “.\nAlumnos hombres:\nAlumnas mujeres:\nLista completa de alumnos:', 'font-size:14px; font-weight:bold; color:black;');
+
+    var hombres = ['Alan','Ernesto','Luis','Arturo','Manuel'];
+    var mujeres = ['Natalia','Rebeca','Abigail','Ariana','Valentina'];
+
+    console.log('Alumnos hombres: ' + hombres[0] + ' - ' + hombres[1] + ' - ' + hombres[2] + ' - ' + hombres[3] + ' - ' + hombres[4]);
+    console.log('Alumnos mujeres: ' + mujeres[0] + ' - ' + mujeres[1] + ' - ' + mujeres[2] + ' - ' + mujeres[3] + ' - ' + mujeres[4]);
+    console.log('Lista completa de alumnos: ' + hombres[0] + ' - ' + hombres[1] + ' - ' + hombres[2] + ' - ' + hombres[3] + ' - ' + hombres[4] + mujeres[0] + ' - ' + mujeres[1] + ' - ' + mujeres[2] + ' - ' + mujeres[3] + ' - ' + mujeres[4]);
+
+
+    console.warn('%cAlgoritmo 2. Con base en el algoritmo anterior, ordena los nombres de cada arreglo en orden alfabético e imprime la respuesta en una ventana de alert. Los objetos del arreglo deben estar separados por un “ – “.','font-size:14px; font-weight:bold; color:black;');
+
+    var ordenHombres = hombres.sort().join("-");
+    var ordenMujeres = mujeres.sort().join("-");
+    console.log(ordenHombres);
+    console.log(ordenMujeres);
+
+
+    console.warn('%cDefine un arreglo como si fuera una lista de compras para el supermercado.\n' +
+        'Posteriormente, imprímelo en formato de lista HTML.','font-size:14px; font-weight:bold; color:black;');
+
+    var lista = ['Tomate','Cebolla','Chile','Leche','Queso','Carne'];
+    document.write('<h2>'+'Lista Supermercado'+'</h2>');
+    document.write('<ol>');
+      lista.forEach(function (el,index){
+          document.write('<li id="supermercado-'+ index +'">'+ el + '</li>');
+      })
+    document.write('</ol>');
+
+
+
+    console.warn('%cAlgoritmo 4. Con base en el algoritmo anterior, ordena la lista alfabéticamente','font-size:14px; font-weight:bold; color:black;');
+
+    var lista = ['Tomate','Cebolla','Chile','Leche','Queso','Carne'];
+    document.write('<h2>'+'Lista Supermercado Ordenada'+'</h2>');
+    document.write('<ol>');
+    lista.sort().forEach(function (el,index){
+        document.write('<li id="supermercado-ordenado-'+ index +'">'+ el + '</li>');
+    })
+    document.write('</ol>');
+
+
+
+    console.warn('%cAlgoritmo 5. Crea un arreglo con los elementos de tu preferencia y luego utiliza los siguientes\n' +
+        'métodos para experimentar con el contenido. Recuerda adjuntar capturas de pantalla de tus\n' +
+        'resultados.','font-size:14px; font-weight:bold; color:black;');
+
+    var lista2 = ['Tomate','Cebolla','Chile','Leche','Queso','Carne'];
+
+    lista2.push('Palomitas');
+    console.log(lista2);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario 2</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .sexo{
+        transition: all .3s;
+    }
+    .sexo:hover{
+        cursor: pointer;
+        transform: scale(1.07);
+        border-width: 2px;
+    }
+    .active{
+        transform: scale(1.07);
+        border-width: 2px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+  <div class="flex flex-col mb-4">
+    <h3 class="font-bold text-xl">Formulario 2 </h3>
+    <p>Desarrolla un formulario que te permita evaluar el perfil de un usuario que desea
+      saber si es posible jubilarse según las especificaciones de su género y edad. Toma en cuenta
+      que un hombre se puede jubilar cuando tenga 60 años o más, en cambio una mujer mayor se
+      jubilará si tiene más de 54 años.</p>
+  </div>
+
+  <form onsubmit="validar()" >
+
+    <div class="flex flex-col mb-12">
+      <p class="font-semibold text-center text-2xl mb-3">Sexo</p>
+      <div class="flex flex-row justify-center">
+        <div class="text-5xl mx-8 px-12 py-8 shadow-lg w-40 border sexo" id="iconoFemenino">🙍🏻‍♀️</div>
+        <div class="text-5xl mx-8 px-12 py-8 shadow-lg w-40 border sexo" id="iconoMasculino">🙍🏻‍♂️</div>
+        <input hidden type="radio" value="Femenino" id="Femenino" name="sexo2" >
+        <input hidden type="radio" value="Masculino" id="Masculino" name="sexo2" >
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <label for="edad" class="font-semibold">Edad</label>
+      <input type="number" id="edad" class="border border-gray-300 px-4 py-2">
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <button class="bg-green-500 text-white font-bold px-8 py-4" type="button" id="validar">Validar</button>
+    </div>
+
+  </form>
+
+  <!--  Libreria SweetAlert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+
+
+
+
+      var iconoFemenino = document.getElementById('iconoFemenino');
+      var iconoMasculino = document.getElementById('iconoMasculino');
+      var femenino = document.getElementById('Femenino');
+      var masculino = document.getElementById('Masculino');
+      var sexo2 ='';
+
+      iconoFemenino.onclick = function (){
+          femenino.checked = true;
+          iconoMasculino.classList.remove('active');
+          iconoFemenino.classList.add('active');
+          sexo2 = 'Femenino';
+      }
+      iconoMasculino.onclick = function (){
+          masculino.checked = true;
+          iconoFemenino.classList.remove('active');
+          iconoMasculino.classList.add('active');
+          sexo2 ='Masculino';
+      }
+
+
+      var btnValidar = document.getElementById('validar');
+      btnValidar.onclick = function (){validar()};
+
+
+      function validar(){
+          // var sexo = document.getElementById('sexo').value;
+          var edad = document.getElementById('edad').value;
+
+          switch (sexo2){
+              case('Femenino'):
+                  if(edad >= 54){
+                      Swal.fire(
+                          'Oh Yeah!!',
+                          'Eres una mujer de '+edad+' y puedes jubilarte',
+                          'success'
+                      );
+                  }else{
+                      Swal.fire(
+                          'Oops!!',
+                          'Eres una mujer de '+edad+' y no puedes jubilarte',
+                          'error'
+                      );
+                  }
+                  break;
+              case('Masculino'):
+                  if(edad >= 60){
+                      Swal.fire(
+                          'Oh Yeah!!',
+                          'Eres un hombre de '+edad+' y puedes jubilarte',
+                          'success'
+                      );
+                  }else{
+                      Swal.fire(
+                          'Oops!!',
+                          'Eres un hombre de '+edad+' y no puedes jubilarte',
+                          'error'
+                      );
+                  }
+                  break;
+              default:
+                  alert('Ingresa tus datos');
+                  break;
+          }
+      }
+  </script>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+header{
+    background-color: #c1c1c1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo img{
+    width: 100%;
+    max-width: 200px;
+}
+#navegacion ul{
+    padding: 0px;
+    list-style: none;
+    display: flex;
+}
+#navegacion ul li{
+    margin: 0 10px;
+}

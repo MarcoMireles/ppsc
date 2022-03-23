@@ -1,0 +1,24 @@
+#hero{
+    position: relative;
+    background-image: url("https://arc-anglerfish-arc2-prod-abccolor.s3.amazonaws.com/public/2NFE3RDHK5GQNDHCQD4OVPGEUM.jpg");
+    height: 1000px;
+    width: 1200px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#hero:before{
+    position: absolute;
+    content: '';
+    background-color: black;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#hero h1, #hero p{
+    z-index: 100;
+    color: white;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+  <form action="#" method="post">
+
+    <div>
+      <label for="chk">Acepto los terminos</label>
+      <input type="checkbox" id="chk">
+      <label for="chk">Acepto los terminos</label>
+    </div>
+
+    <div>
+      <label >Elige tu color</label>
+      <input type="radio" id="rojo" name="color"> Rojo
+      <input type="radio" id="azul" name="color"> Azul
+    </div>
+
+    <div>
+      <button type="button" id="enviar">Enviar</button>
+    </div>
+
+  </form>
+
+  <script>
+
+    var btnEnviar = document.getElementById('enviar');
+    console.log(btnEnviar);
+
+    btnEnviar.onclick = function (){
+
+        var checkbox = document.getElementById('chk');
+
+        if (checkbox.checked == true){
+            console.log('Si esta check');
+        }else {
+            console.log('No esta check');
+        }
+
+    }
+
+
+  </script>
+
+</body>
+</html>

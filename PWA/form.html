@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario 2</title>
+<!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+  <div class="flex flex-col mb-4">
+    <h3 class="font-bold text-xl">Formulario 2 </h3>
+    <p>Ayuda a Don Pancho mediante la creación de un menú a determinar lo que
+      cobrará a los clientes de su pizzería. Considera que cada pizza tiene un costo de $130, se le
+      pregunta al cliente cuántos ingredientes extra desea agregar y cada uno tiene un costo de $12
+      (se pueden pedir máximo 3), si el cliente desea llevar refresco, serán $30 más, y si agrega un
+      litro de nieve son $25 más. Además, se debe agregar la entrega a domicilio por $20 al final de
+      la compra.</p>
+    <p>
+      Crea un formulario que te permita capturar las indicaciones de la orden del cliente y
+      posteriormente imprimir el ticket y el total de la compra en una ventana de alerta. Tu formulario
+      se puede ver como el siguiente y la salida debe ser igual a la que se muestra.
+    </p>
+  </div>
+
+  <form >
+
+    <div class="flex flex-col mb-4  ">
+      <p class="font-bold">Tamaño de Pizza</p>
+      <div class="flex flex-row items-center">
+        <input type="radio" value="79" id="chica" name="tamano-de-pizza">
+        <label for="chica" class="font-semibold mx-4">Chica $79</label>
+        <input type="radio" value="100" id="mediana" name="tamano-de-pizza">
+        <label for="mediana" class="font-semibold mx-4">Mediana $100</label>
+        <input type="radio" value="140" id="grande" name="tamano-de-pizza">
+        <label for="grande" class="font-semibold mx-4">Grande $140</label>
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <p class="font-bold">Ingredientes <small>(Costo por ingrediente $25)</small></p>
+      <div class="flex flex-row items-center">
+        <input type="checkbox" value="pepperoni" id="pepperoni" name="ingredientes">
+        <label for="pepperoni" class="font-semibold mx-4">Pepperoni</label>
+        <input type="checkbox" value="jamon" id="jamon" name="ingredientes">
+        <label for="jamon" class="font-semibold mx-4">Jamon</label>
+        <input type="checkbox" value="pina" id="pina" name="ingredientes">
+        <label for="pina" class="font-semibold mx-4">Piña</label>
+        <input type="checkbox" value="champinones" id="champinones" name="ingredientes">
+        <label for="champinones" class="font-semibold mx-4">Champiñones</label>
+        <input type="checkbox" value="chorizo" id="chorizo" name="ingredientes">
+        <label for="chorizo" class="font-semibold mx-4">Chorizo</label>
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <p class="font-bold">Complementos</p>
+      <div class="flex flex-row items-center">
+        <input type="checkbox" value="20" id="refresco" name="complementos">
+        <label for="refresco" class="font-semibold mx-4">Refresco $20</label>
+        <input type="checkbox" value="40" id="pastel" name="complementos">
+        <label for="pastel" class="font-semibold mx-4">Pastel $40</label>
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <label for="entrega" class="font-bold">Método de entrega</label>
+      <div class="flex flex-row items-center">
+        <select name="entrega" id="entrega" class="border border-gray-300 px-4 py-2">
+          <option value="">Selecciona una opcion</option>
+          <option value="0">Recoger en sucursal</option>
+          <option value="100">Entrega a domicilio</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <label for="perrito" class="font-bold">¿Deseas apoyar a un perrito sin hogar? </label>
+      <div class="flex flex-row items-center">
+        <input type="number" min="100" max="2000" step="50" class="border border-gray-300 px-4 py-2" value="perrito" id="perrito" name="perrito" placeholder="$100..">
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <button type="button" class="bg-green-500 text-white font-bold px-8 py-4" id="pagar">Pagar orden</button>
+    </div>
+
+  </form>
+
+<!--  Libreria SweetAlert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+      // document.getElementById("pagar").addEventListener("click", pagar);
+      document.getElementById('pagar').onclick = pagar;
+    function pagar( ){
+        var tamanoDePizza = document.getElementsByName('tamano-de-pizza');
+        var ingredientes = document.getElementsByName('ingredientes');
+        var complementosRefresco = document.getElementById('refresco');
+        var complementosPastel = document.getElementById('pastel');
+        var entrega = document.getElementById('entrega').value;
+        var perrito = document.getElementById('perrito').value;
+
+        // Obtener tamaño y precio de pizza
+        for(i=0; i<tamanoDePizza.length; i++){
+            if(tamanoDePizza[i].checked){
+              var precioDePizzaSeleccionada=tamanoDePizza[i].value;
+              var tamanoDePizzaSeleccionada=tamanoDePizza[i].getAttribute('id');
+            }
+        }
+
+
+        var ingredientesArray = [];
+        for (var i=0; i < ingredientes.length; i++) {
+            if (ingredientes[i].checked) {
+                ingredientesArray.push(ingredientes[i].getAttribute('id'));
+            }
+        }
+
+        // Obtener Complementos
+        var precioComplementosRefresco =0;
+        var precioComplementosPastel =0;
+        if(complementosRefresco.checked){
+            precioComplementosRefresco = complementosRefresco.value;
+        }
+        if(complementosPastel.checked){
+            precioComplementosPastel = complementosPastel.value;
+        }
+
+        precioDePizzaSeleccionada = parseInt(precioDePizzaSeleccionada);
+        var totalIngredientes = parseInt(ingredientesArray.length) * 25;
+        precioComplementosRefresco = parseInt(precioComplementosRefresco);
+        precioComplementosPastel = parseInt(precioComplementosPastel);
+        entrega = parseInt(entrega);
+        perrito = parseInt(perrito);
+
+
+        var total = totalIngredientes + precioDePizzaSeleccionada + precioComplementosRefresco + precioComplementosPastel + entrega + perrito;
+
+        console.log('Pizza ' + tamanoDePizzaSeleccionada +': '+ precioDePizzaSeleccionada);
+        console.log(ingredientesArray.length+' ingredientes: ' + totalIngredientes);
+        console.log('Refresco: ' + precioComplementosRefresco);
+        console.log('Pastel: ' + precioComplementosPastel);
+        console.log('Costo de entrega: ' + entrega);
+        console.log('Apoyo a perritos: ' + perrito);
+        console.log(total); 
+
+    }
+  </script>
+
+</section>
+
+</body>
+</html>

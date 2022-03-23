@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Estructura básica</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+<h1>Hola Amigos :)</h1>
+
+  <form action="#" method="post">
+
+    <div class="flex items-center mb-4">
+      <label for="nombre">Ingresa tu nombre</label>
+      <input type="text"
+             name="nombre"
+             id="nombre"
+             class="border ml-2 py-1 px-2"
+             placeholder="Pedro"
+      >
+    </div>
+
+    <div class="flex items-center mb-4">
+      <label for="apellido">Ingresa tu apellido</label>
+      <input type="text" name="apellido" id="apellido" class="border ml-2 py-1 px-2" placeholder="Rios">
+    </div>
+
+    <div class="flex items-center mb-4">
+      <label for="edad">Ingresa tu edad</label>
+      <input type="number" name="edad" id="edad" class="border ml-2 py-1 px-2">
+    </div>
+
+    <div class="flex items-center mb-4">
+      <label for="correo">Ingresa tu correo</label>
+      <input type="email" name="correo" id="correo" class="border ml-2 py-1 px-2" placeholder="correo@correo.com">
+    </div>
+
+    <div class="flex items-center mb-4">
+      <label for="telefono">Ingresa tu telefono</label>
+      <input type="text" name="telefono" id="telefono" class="border ml-2 py-1 px-2" placeholder="(+52) 8122008029">
+    </div>
+
+
+    <div class="flex">
+      <button type="button" id="obtenerDatos" class="text-white px-2 py-1 mx-1 bg-green-500">Obtener datos</button>
+      <button type="reset" class="text-white px-2 py-1 mx-1 bg-red-500">Limpiar</button>
+    </div>
+  </form>
+
+
+
+</section>
+
+
+<!--  Libreria SweetAlert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    // Declaramos variable y seleccionamos el boton por su ID
+    var btnObtenerDatos = document.getElementById("obtenerDatos");
+
+
+    btnObtenerDatos.onclick = function (){
+        // Funcion magica
+        obtenerDatos();
+    }
+
+
+    function obtenerDatos(){
+        // Codigo magico
+        var nombre = document.getElementById("nombre").value;
+        var apellido = document.getElementById("apellido").value;
+        var edad = document.getElementById("edad").value;
+        var correo = document.getElementById("correo").value;
+        var telefono = document.getElementById("telefono").value;
+        // Ejecutamos funcion de validar
+        validar(nombre,apellido,edad,correo,telefono);
+    }
+    function validar(nombre,apellido,edad,correo,telefono){
+        // ! =
+        if(nombre != '' && apellido != '' && edad != '' && correo != '' && telefono != ''){
+            Swal.fire('Bienvenido');
+        }else{
+            Swal.fire('Debes llenar todos los campos');
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Actividad 10</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+      form{
+          width: 100%;
+          max-width: 400px;
+      }
+  </style>
+</head>
+<body>
+
+<section class="flex">
+  <section>
+    <div class="container mx-auto px-4 border py-20">
+      <h1 class="font-bold text-4xl mb-4">Compras</h1>
+      <form action="#" method="post">
+
+        <div class="flex items-center justify-between mt-4">
+          <label class="text-xl font-semibold " for="tienda">Selecciona la tienda</label>
+          <select id="tienda" class="border px-4 py-2">
+            <option value="">Selecciona una tienda</option>
+            <option value="Home Depot">Home Depot</option>
+            <option value="Lowes">Lowes</option>
+            <option value="HEB">HEB</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between mt-4">
+          <label class="text-xl font-semibold " for="nombre">Nombre</label>
+          <input type="text" id="nombre" class="border px-4 py-2" placeholder="Escribe tu nombre de cliente">
+        </div>
+
+        <div class="flex items-center justify-between mt-4">
+          <label class="text-xl font-semibold " for="direccion">Direccion</label>
+          <input type="text" id="direccion" class="border px-4 py-2" placeholder="Calle,No. y Colonia">
+        </div>
+
+        <div class="flex items-center justify-between mt-4">
+          <button class="bg-blue-600 px-4 py-2 text-white" type="button" id="btn-iniciar">Iniciar Sesion</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mx-auto px-4 border py-20">
+      <h2 class="font-bold text-3xl mb-4">Selecciona tus productos</h2>
+      <form action="#" method="post">
+
+        <div class="flex items-center ">
+          <input type="checkbox" value="50" class="producto" id="maceta">
+          <label class="text-xl font-semibold ml-2" for="maceta">Maceta</label>
+        </div>
+
+        <div class="flex items-center ">
+          <input type="checkbox" value="600" class="producto" id="regadera">
+          <label class="text-xl font-semibold ml-2" for="regadera">Regadera automática</label>
+        </div>
+
+        <div class="flex items-center ">
+          <input type="checkbox" value="3500" class="producto" id="camara">
+          <label class="text-xl font-semibold ml-2" for="camara">Cámara de seguridad</label>
+        </div>
+
+        <div class="flex items-center ">
+          <input type="checkbox" value="30" class="producto" id="semillas">
+          <label class="text-xl font-semibold ml-2" for="semillas">Semillas</label>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <button class="bg-green-600 px-4 py-2 text-white" type="button" id="pagar">Pagar</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+</section>
+
+<section>
+  <div class="container mx-auto px-4 border py-20">
+    <h2 class="font-bold text-3xl mb-4">Tu Ticket</h2>
+    <div class="flex" id="ticket">
+
+    </div>
+  </div>
+</section>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    var btnIniciar = document.getElementById('btn-iniciar');
+    var btnPagar = document.getElementById('pagar');
+
+    btnIniciar.onclick = function (){
+        iniciarSesion();
+    }
+
+    btnPagar.onclick = function (){
+        pagar();
+    }
+
+    function iniciarSesion(){
+        var tienda = document.getElementById('tienda').value;
+        var nombre = document.getElementById('nombre').value;
+        var direccion = document.getElementById('direccion').value;
+        if (!tienda || !nombre || !direccion){
+            Swal.fire(
+                'Opss!',
+                'Debes llenar todos los campos',
+                'error'
+            )
+        }else{
+            console.log(tienda);
+            console.log(nombre);
+            console.log(direccion);
+        }
+
+    }
+
+    function pagar(){
+        // var productos = document.getElementsByClassName('producto');
+        // var productos2 = document.querySelector('.producto');
+        var productos = document.querySelectorAll('.producto');
+        var totalSuma = 0;
+        // console.log(productos);
+
+        for(var i = 0; i < productos.length; i++){
+            // console.log(productos[i].value);
+
+            if (productos[i].checked){
+                precio = parseInt(productos[i].value);
+                totalSuma = totalSuma + precio;
+            }
+        }
+        console.log(totalSuma);
+
+    }
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 4</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+  <div class="flex flex-col mb-4">
+
+    <h2 class="font-bold text-xl mb-4">Formulario 4</h2>
+    <p>Considera que un usuario ingresó los siguientes datos en el formulario que
+      recién creaste, sin embargo, hubo un error en su apellido; agrega al código las líneas
+      necesarias para que la ventanilla de alerta muestre el nombre original que el usuario ingresó y
+      posteriormente el cambio en el nombre.</p>
+
+  </div>
+
+  <form onsubmit="saludo()">
+
+    <div class="flex flex-col mb-4">
+      <p class="font-bold mb-4">Input Text</p>
+      <div class="flex flex-row mb-4">
+        <label for="nombre" class="font-bold mb-4">Nombre</label>
+        <input type="text" id="nombre" class="border border-gray-300 px-4 mx-4 py-2">
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <p class="font-bold mb-4">Radio Button</p>
+      <div class="flex flex-row mb-4">
+        <input type="radio" id="femenino" name="sexo" value="Femenino">
+        <label for="femenino" class="font-bold mx-4">Femenino</label>
+        <input type="radio" id="masculino" name="sexo" value="Masculino">
+        <label for="masculino" class="font-bold mx-4">Masculino</label>
+      </div>
+    </div>
+
+    <div class="flex flex-col mb-4">
+      <p class="font-bold mb-4">Checkbox</p>
+      <div class="flex flex-row mb-4">
+        <input type="checkbox" id="term" class="border border-gray-300 px-4 py-2">
+        <label for="term" class="font-bold mx-4">Terminos y Condiciones</label>
+      </div>
+    </div>
+
+    <button class="bg-green-500 text-white font-bold px-8 py-4" type="submit">Calcular</button>
+
+  </form>
+
+  <script>
+      function saludo(){
+          var nombre = document.getElementById('nombre').value; // Obtenemos el nombre
+          var nombreMinusculas = nombre.toLowerCase(); // Pasamos el nombre a minusculas
+          var buscamosHernandez = nombreMinusculas.indexOf("hernandez"); // Buscamos el sting 'hernandez' en el nombre
+          alert('Bienvenido '+ nombre); // Damos la Bienvenida con el Nombre que escribio el usuario
+          if(buscamosHernandez > 0){ // Validamos si el sting 'hernandez' aparece en el nombre
+              alert('Apellido incorrecto Hernandez'); // Si el string 'hernandez' aparece en el nombre mostramos el alerta
+          }
+          alert('Tu nombre correcto es Pancho Pantera Rodriguez'); // Mostramos alerta de su nombre correcto.
+      }
+  </script>
+
+</section>
+
+</body>
+</html>

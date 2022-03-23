@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Evaluación Integradora Segundo Parcial</title>
+        <style>
+            .boton{
+                text-align:center;
+                font-family:'Times New Roman', Times, serif;
+                color:rgb(3, 3, 3);
+                padding-top:10px;
+                padding-bottom:10px;
+                padding-left:10px;
+                padding-right:10px;
+                border: 5px solid rgb(7, 3, 54);
+                font-size:14px;
+                background-color:rgba(71, 138, 165, 0.664);
+            }
+            .ing{
+                text-align:center;
+                font-family:Elephant;
+                color:rgb(7, 80, 80);
+                padding-top:10px;
+                padding-bottom:10px;
+                border: 5px solid turquoise;
+                font-size:18px;
+                background-color:rgb(116, 236, 162);
+                border-radius:30px 10px 30px 10px;
+            }
+            .nom{
+                font-family:Arial;
+                color:rgb(58, 75, 75);
+                padding-top:10px;
+                padding-bottom:10px;
+                border: 2px solid rgb(44, 48, 47);
+                font-size:12px;
+                background-color:rgb(153, 240, 119);
+                border-radius:10px 10px 10px 10px;
+            }
+        </style>
+    </head>
+    <body style="background-color:#60516F">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <div>
+            <img src="Imgns/ev2.png" alt="Evaluacion integradora" style="width:1400px; height:250px"/>
+            <br>
+        </div>
+        <div class="ing">
+            <form>
+                <label for="usuario"> Ingrese su usuario: </label>
+                <input type="text" placeholder="Usuario" id="usuario"/>
+                <br>
+                <br>
+                <label for="contraseña"> Ingrese su contraseña: </label>
+                <input type="text" placeholder="Contraseña" id="contraseña"/>
+                <br>
+                <br>
+                <button class="boton" type="button" id="iniciar"><b>Iniciar sesion</b></button>
+                <br>
+                <br>
+                <a href="Calificaciones.html" target="_blank"><i>Ingresar una vez iniciado sesion</i></a>
+           </form>
+        </div>
+        <br>
+        <div class="nom">
+            <p><b>Nombre: </b>Luis Gerardo Alvarado Moreno</p>
+            <p><b>Matricula: </b>3970</p>
+        </div>
+        <script>
+            var i=document.getElementById("iniciar");
+            i.onclick=function(){iniciar()};
+            function iniciar(){
+                var us=document.getElementById("usuario").value;
+                var con=document.getElementById("contraseña").value;
+            if(us=="L_alva" && con=="politecnica2021"){
+                alert("Bienvenido "+us+ "\n"+"Ingrese al link de abajo");
+            }else{
+                alert("Datos incorrectos, favor de revisar bien su contraseña y usuario")
+            }
+        }
+        </script>
+    </body>
+</html>

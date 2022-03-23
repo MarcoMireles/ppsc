@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Select 2</title>
+
+<!--  Libreria JQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+
+<!--  Librerias Select2-->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+  <div class="flex flex-col mb-4 ">
+    <p class="font-bold text-4xl text-center">TABLAS DE MULTIPLICAR</p>
+  </div>
+
+<form >
+  <div class="flex flex-col mb-4">
+    <label class="font-bold text-3xl" for="sexo">Selecciona tu sexo</label>
+    <select class="sexo border border-gray-300 px-4 py-2" id="sexo" name="state">
+      <option value="Femenino">Femenino</option>
+      <option value="Femenino2">Femenino2</option>
+      <option value="Femenino3">Femenino3</option>
+      <option value="Femenino4">Femenino4</option>
+      <option value="Femenino5">Femenino5</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Masculino2">Masculino2</option>
+      <option value="Masculino3">Masculino3</option>
+      <option value="Masculino4">Masculino4</option>
+      <option value="Masculino5">Masculino5</option>
+      <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col mb-4">
+    <label class="font-bold text-3xl" for="sexo2">Selecciona tu sexo 2</label>
+    <select class="sexo2 border border-gray-300 px-4 py-2" id="sexo2" name="state">
+      <option value="Femenino">Femenino</option>
+      <option value="Femenino">Femenino2</option>
+      <option value="Femenino">Femenino3</option>
+      <option value="Femenino">Femenino4</option>
+      <option value="Femenino">Femenino5</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Masculino">Masculino2</option>
+      <option value="Masculino">Masculino3</option>
+      <option value="Masculino">Masculino4</option>
+      <option value="Masculino">Masculino5</option>
+      <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col mb-4">
+    <label class="font-bold text-3xl" for="musica">Selecciona tu musica favorita</label>
+    <select class="musica border border-gray-300 px-4 py-2" id="musica" name="generos[]" multiple="multiple">
+      <option value="Rock">Rock</option>
+      <option value="Pop">Pop</option>
+      <option value="Metal">Metal</option>
+      <option value="Ska">Ska</option>
+      <option value="Rap">Rap</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col mb-4 ">
+    <div class="flex flex-row items-center">
+      <button type="button" id="obtener" class="bg-green-500 text-white font-bold px-8 py-4">Obtener datos</button>
+    </div>
+  </div>
+
+</form>
+</section>
+
+<script>
+    $(document).ready(function() {
+
+
+        $('.sexo').select2();
+        $('.sexo2').select2();
+
+        $('.musica').select2();
+
+
+    });
+
+    // Seleccionamos el boton Generar
+    var obtener = document.getElementById('obtener');
+
+    // Le agregamos un evento click al boton Generar y ejecutara la funcion generarTabla()
+    obtener.onclick = function (){obtenerDatos()};
+
+    // Declaramos la funcion generarTabla()
+    function obtenerDatos(){
+
+        // Seleccionamos el input sexo y obtenemos su valor
+        var sexo = document.getElementById('sexo').value;
+
+        console.log(sexo);
+
+    }
+</script>
+
+</body>
+</html>

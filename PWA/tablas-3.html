@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ciclo For | Tablas 3</title>
+  <!--  Libreria TailwindCss-->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<section class="w-1/2 mx-auto px-4 py-20 bg-white rounded shadow-lg">
+
+  <div class="flex flex-col mb-4 ">
+    <p class="font-bold text-4xl text-center">TABLAS DE MULTIPLICAR</p>
+  </div>
+
+  <div class="flex flex-col mb-4 ">
+    <p class="font-bold text-3xl">¿Que tabla quieres ejecutar?</p>
+    <div class="flex flex-row items-center">
+      <input type="number" min="1" id="numeroTabla" class="border border-gray-300 px-4 py-2">
+    </div>
+  </div>
+
+  <div class="flex flex-col mb-4 ">
+    <p class="font-bold text-3xl">¿Hasta que numero?</p>
+    <div class="flex flex-row items-center">
+      <input type="number" min="1" id="limiteTabla" class="border border-gray-300 px-4 py-2">
+    </div>
+  </div>
+
+  <div class="flex flex-col mb-4 ">
+    <div class="flex flex-row items-center">
+      <button type="button" id="generar" class="bg-green-500 text-white font-bold px-8 py-4">Generar tabla de multiplicar</button>
+    </div>
+  </div>
+
+  <ul id="tablas" class="flex flex-col text-xl">
+
+  </ul>
+
+</section>
+
+<script>
+
+    // Seleccionamos el boton Generar
+    var generar = document.getElementById('generar');
+
+    // Le agregamos un evento click al boton Generar y ejecutara la funcion generarTabla()
+    generar.onclick = function (){generarTabla()};
+
+    // Declaramos la funcion generarTabla()
+    function generarTabla(){
+
+        // Le decimos al documento que seleccionemos el id tablas y lo limpie
+        document.getElementById("tablas").innerHTML = "";
+
+        // Seleccionamos el input numeroTabla y obtenemos su valor
+        var numeroTabla = document.getElementById('numeroTabla').value;
+
+        // Seleccionamos el input limiteTabla y obtenemos su valor
+        var limiteTabla = document.getElementById('limiteTabla').value;
+
+        // Sintaxis For
+        // Primero declaramos el iterador en 1
+        // Despues establecemos la condicion (iterador es menor e igual a la variable para iterar)
+        // Le sumamos 1 a la variable iterador
+        for ( var i = 1 ; i <= limiteTabla; i++) {
+
+            // Si la condicion se cumple, ejecutamos el siguiente código
+
+            // Creamos una variable item y le asignamos la creacion de un elemento de lista (li)
+            var item = document.createElement("li");
+
+            // Creamos una variable textnode y le asignamos la creacion de un Text Node y le pasamos lo que deseamos imprimir
+            var textnode = document.createTextNode(numeroTabla + " x " + i + " = " + numeroTabla * i);
+
+            // Le decimos al elemento item (li) que dentro de el imprimiremos lo que contiene el textnode
+            item.appendChild(textnode);
+
+            // Le decimos al documento que seleccione el id tablas y le añada dentro de el lo que contiene el item.
+            document.getElementById("tablas").appendChild(item);
+        }
+    }
+
+</script>
+</body>
+</html>
