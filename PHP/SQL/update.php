@@ -1,6 +1,4 @@
 <?php
-
-
 /* Incluimos la conexion */
 include_once('conexion.php');
 
@@ -13,7 +11,7 @@ $consulta = "UPDATE alumno SET apellido=? WHERE id=?";
 
 $sentencia = $con->prepare($consulta);
 $sentencia->bind_param("si", $apellido,$id);
-$id = 5;
+$id = 1;
 $apellido = "Mireles";
 $ejecutar = $sentencia->execute();
 

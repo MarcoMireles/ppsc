@@ -6,11 +6,11 @@ include_once('conexion.php');
 
 /* Preparar una sentencia INSERT */
 $consulta = "SELECT * FROM alumno";
-//$consulta = "SELECT * FROM alumno";
 
 
 $sentencia = $con->prepare($consulta);
 $sentencia->execute();
+
 $resultado = $sentencia->get_result();
 echo 'Aqui estan los pinchis resultados alv! <br>';
 if ($resultado->num_rows > 0) {
