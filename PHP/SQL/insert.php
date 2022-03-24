@@ -3,6 +3,9 @@
 include_once ('conexion.php');
 
 
+$var1 = 'Marco';
+$var2 = 'Mireles';
+
 /* Preparar una sentencia INSERT */
 $consulta = "INSERT INTO alumno (nombre, apellido)
 VALUES (?,?)";
@@ -18,8 +21,6 @@ $sentencia->bind_param('ss',$var1,$var2);
  * b	la variable correspondiente es un blob y se envía en paquetes
 */
 
-$var1 = 'Marco';
-$var2 = 'Villarreal';
 
 /* Ejecutar la sentencia */
 $ejecutar = $sentencia->execute();
