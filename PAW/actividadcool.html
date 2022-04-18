@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#">
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" placeholder="Nombre cool">
+
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido" placeholder="Apellido cool">
+
+    <label for="edad">Edad</label>
+    <input type="number" id="edad">
+
+    <button type="button" id="enviar">Enviar</button>
+</form>
+
+
+<script>
+    var enviar = document.getElementById('enviar');
+
+    enviar.onclick = function(){
+        solicitar();
+    }
+
+    function solicitar(){
+        var nombre = document.getElementById('nombre');
+        var apellido = document.getElementById('apellido');
+        var edad = document.getElementById('edad');
+
+        if(edad < 16){
+            console.log('Entras a la party');
+        }else if(edad >= 16 && edad < 18){
+            console.log('Entras a la party y tu ticket es Verde');
+        }else if(edad >= 18 && edad <= 25){
+            console.log('Entras a la party y tu ticket es Amarillo');
+        }else {
+            console.log('Entras a la party y tu ticket es Rojo');
+        }
+
+    }
+</script>
+
+</body>
+</html>

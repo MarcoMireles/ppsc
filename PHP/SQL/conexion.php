@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect('localhost', 'root', 'root', 'ppsc2');
+$con = mysqli_connect('localhost', 'root', '', 'ppsc2');
 
 if (!$con) {
   die('Error de Conexión (' . mysqli_connect_errno() . ') '
