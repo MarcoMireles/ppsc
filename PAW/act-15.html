@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <form action="#">
+
+    <select name="dep" id="dep">
+      <option value="">Selecciona el departamento</option>
+      <option value="electronica">Electronica</option>
+      <option value="jugueteria">Jugueteria</option>
+    </select>
+
+    <label for="cant">¿Cuantos productos son?</label>
+    <input type="number" id="cant">
+
+    <label for="tarjeta">¿Cuentas con tarjeta de puntos?</label>
+    <input type="checkbox" id="tarjeta">
+
+    <button type="button" id="calcular">Calcular</button>
+
+  </form>
+
+
+  <script>
+
+    var btnCalcular = document.getElementById('calcular');
+
+    btnCalcular.onclick = function (){
+
+        // obtenemos el departamento
+        var dep = obtenerDepartamento();
+
+        if(dep == 'electronica'){
+
+            var cant = obtenerCantidad();
+            var subtotal = calcularElectronica(cant);
+
+        }else if (dep == 'jugueteria'){
+
+            var cant = obtenerCantidad();
+            var subtotal = calcularJugueteria(cant);
+        }else{
+            alert('Debes seleccionar un departamento');
+        }
+
+    }
+
+    function obtenerDepartamento(){
+        var dep = document.getElementById('dep').value;
+        console.log('Selecciono el departamento: '+dep)
+        return dep;
+    }
+
+    function obtenerCantidad(){
+        var cant = parseInt(document.getElementById('cant').value);
+        console.log('La cantidad de productos son: '+cant)
+        return cant;
+    }
+
+    function calcularElectronica(cant){
+            var paq = Math.trunc(cant / 3);
+            console.log('Son '+ paq +' Paquetes')
+            var extras =  cant % 3;
+            console.log('Son '+ extras +' individuales')
+            var totalPaq = paq * 2200;
+            console.log('Costo total de paquetes '+ totalPaq  )
+            var Totalextras = extras * 850;
+            console.log('Costo total de individual '+ Totalextras  )
+            total = totalPaq + Totalextras;
+            return total;
+    }
+
+    function calcularJugueteria(cant){
+
+    }
+
+    function validarTarjeta(){
+        var checkbox = document.getElementById('tarjeta').checked;
+        return checkbox;
+    }
+
+  </script>
+</body>
+</html>
