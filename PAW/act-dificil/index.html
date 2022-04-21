@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Actividad Dificil</title>
+</head>
+<body>
+<form action="#">
+    <label for="departamento">Selecciona el departamento</label>
+    <select name="departamento" id="departamento">
+        <option value="electronica">Electronica</option>
+        <option value="jugueteria">Jugueteria</option>
+    </select>
+    <br>
+    <label for="cant">Cantidad de articulos</label>
+    <input type="number" id="cant">
+    <br>
+    <label for="tarjeta">¿Cuentas con tarjeta?</label>
+    <input type="checkbox" id="tarjeta">
+    <br>
+    <button id="enviar">Enviar</button>
+</form>
+
+<script>
+    var btnEnviar = document.getElementById('enviar');
+
+    btnEnviar.onclick = function (){
+        calcular();
+    }
+
+    function calcular(){
+        var departamento = document.getElementById('departamento').value;
+        var cant = document.getElementById('cant').value;
+        var tarjeta = validarTarjeta();
+        if (departamento == 'electronica'){
+            var total = cantidadElectronica(cant);
+        }else{
+
+        }
+    }
+
+
+    function validarTarjeta(){
+        var tarjeta = document.getElementById('tarjeta').checked;
+        return tarjeta;
+    }
+
+
+    function cantidadElectronica(cant){
+        if(cant >= 3){
+            var resultado = cant / 3;
+        }else{
+            var total = cant * 850;
+        }
+    }
+</script>
+
+</body>
+</html>
